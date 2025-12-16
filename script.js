@@ -1,18 +1,19 @@
 const myLibrary = [];
 
 // Book Object Constructor
-function Book(title, writer, genre){
+function Book(title, writer, genre, poster_url){
     this.id = crypto.randomUUID();
     this.title = title;
     this.writer = writer;
     this.genre = genre;
+    this.poster_url = poster_url || "no-image-found.png";
 }
 
-const book1 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "Fantasy, Fiction");
-const book2 = new Book("The Hobbit", "J. R. R. Tolkien", "Fantasy, Fiction");
-const book3 = new Book("1984", "George Orwell", "Dystopian, Science Fiction");
-const book4 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction, Classic");
-const book5 = new Book("Pride and Prejudice", "Jane Austen", "Romance, Classic");
+const book1 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "Fantasy, Fiction", "");
+const book2 = new Book("The Hobbit", "J. R. R. Tolkien", "Fantasy, Fiction", "");
+const book3 = new Book("1984", "George Orwell", "Dystopian, Science Fiction", "");
+const book4 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction, Classic", "");
+const book5 = new Book("Pride and Prejudice", "Jane Austen", "Romance, Classic", "");
 
 myLibrary.push(book1, book2, book3, book4, book5);
 
@@ -32,7 +33,7 @@ function renderBooks(){
 
         // Create Image
         const img = document.createElement("img");
-        img.src = "no-image-found.png";
+        img.src = book.poster_url;
         img.alt = "book cover";
         card.appendChild(img);
 
@@ -51,6 +52,21 @@ function renderBooks(){
         const genre = document.createElement("p");
         genre.textContent = `Genre: ${book.genre}`;
         info.appendChild(genre);
+
+        // Delete Button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.addEventListener("click", ()=>{
+            for(let i=0; i<myLibrary.length; i++){
+                if(myLibrary[i].id === book.id){
+                    myLibrary.splice(i, 1);
+                    renderBooks();
+                    break;
+                }
+            }
+        });
+        info.appendChild(deleteBtn);
 
         card.appendChild(info);
         books.appendChild(card);
@@ -89,7 +105,8 @@ form.addEventListener("submit", (e)=>{
     const newBook = new Book(
         titleInput.value,
         authorInput.value,
-        genreInput.value
+        genreInput.value,
+        coverInput.value
     );
 
     myLibrary.push(newBook);
