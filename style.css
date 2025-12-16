@@ -75,6 +75,20 @@ h3 {
     gap: 20px;
 }
 
+.dialog-content form input[type="text"]{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.dialog-content form input[type="url"]{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 .books-container{
     display: flex;
     justify-content: center;

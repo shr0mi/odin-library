@@ -9,11 +9,11 @@ function Book(title, writer, genre, poster_url){
     this.poster_url = poster_url || "no-image-found.png";
 }
 
-const book1 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "Fantasy, Fiction", "");
-const book2 = new Book("The Hobbit", "J. R. R. Tolkien", "Fantasy, Fiction", "");
-const book3 = new Book("1984", "George Orwell", "Dystopian, Science Fiction", "");
-const book4 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction, Classic", "");
-const book5 = new Book("Pride and Prejudice", "Jane Austen", "Romance, Classic", "");
+const book1 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "Fantasy, Fiction", "https://archive.org/services/img/lccn_078073006991/full/pct:200/0/default.jpg");
+const book2 = new Book("The Hobbit", "J. R. R. Tolkien", "Fantasy, Fiction", "https://img1.od-cdn.com/ImageType-400/0293-1/%7BC9B54C84-0369-49C5-A0B3-98E3353A2129%7DIMG400.JPG");
+const book3 = new Book("1984", "George Orwell", "Dystopian, Science Fiction", "https://bookowlsbd.com/cdn/shop/files/Asif_94fc2715-39c4-4968-b517-208eca670677.png?v=1749968834");
+const book4 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction, Classic", "https://bookowlsbd.com/cdn/shop/files/images-_54.jpg?v=1712229255");
+const book5 = new Book("Pride and Prejudice", "Jane Austen", "Romance, Classic", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5AfrvhPMMEL7WHYy-I3HS9VOWRhhiT4McQ&s");
 
 myLibrary.push(book1, book2, book3, book4, book5);
 
