@@ -59,3 +59,43 @@ function renderBooks(){
 
 renderBooks();
 
+
+// Show Add Book Dialog
+const dialog = document.querySelector(".form-dialog");
+const showDialogBtn = document.querySelector("#dialog-btn");
+const closeBtn = document.querySelector("#closeBtn");
+
+showDialogBtn.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+closeBtn.addEventListener("click", () => {
+    dialog.close();
+});
+
+
+// Form Submission
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const genreInput = document.querySelector("#genre");
+const coverInput = document.querySelector("#cover");
+const submitBtn = document.querySelector("#submitBtn");
+
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const newBook = new Book(
+        titleInput.value,
+        authorInput.value,
+        genreInput.value
+    );
+
+    myLibrary.push(newBook);
+    renderBooks();
+    form.reset();
+    dialog.close();
+});
+
+

@@ -9,6 +9,73 @@ h3 {
     text-align: center;
 }
 
+.add-book {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.add-book button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.add-book button:hover {
+    background-color: #45a049;
+}
+
+.add-book .close-btn{
+    background-color: red;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.add-book .close-btn:hover {
+    background-color: darkred;
+}
+
+.form-dialog{
+    padding: 20px;
+}
+
+.dialog-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+}
+
+.dialog-content h4{
+    margin: 0px;
+}
+
+.dialog-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.dialog-content form .buttons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
 .books{
     display: flex;
     flex-direction: column;
@@ -16,6 +83,7 @@ h3 {
     justify-content: center;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .card {
